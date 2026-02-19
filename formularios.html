@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formularios</title>
+</head>
+<body>
+    <h1>Formulario en HTML</h1>
+    <form action="formularios.html" method="GET" >
+        <label for="txtNombre">Nombre Completo</label>
+        <input type="text" name="txtNombreCompleto" id="txtNombre" placeholder="Escriba su Nombre Completo" />
+        <!-- txtNombreCompleto=valorIngresadoPorElusuario -->
+         <label for="intEdad">Edad</label>
+         <input type="number" min="1" max="150" name="intEdad" id="intEdad" />
+         
+         <br/>
+         <label for="colorAzul">Azul</label>
+         <input type="radio" name="colorPreferido" id="colorAzul" value="azul" />
+         <label>Rojo&nbsp;
+            <input type="radio" name="colorPreferido" id="colorRojo" value="rojo" />
+         </label>
+         <label>Amarillo
+         <input type="radio" name="colorPreferido" id="colorAmarillo" value="amarillo"/>
+         </label>
+         <label>Verde &nbsp;
+         <input type="radio" name="colorPreferido" id="colorVerde" value="verde"/>
+         </label>
+
+         <fieldset>
+            <legend>Opciones</legend>
+            <label>Opción 1 <input type="checkbox" value="1" name="opcion1"/> </label>
+            <label>Opción 2 <input type="checkbox" value="2" name="opcion2"/> </label>
+            <label>Opción 3 <input type="checkbox" value="3" name="opcion3"/> </label>
+            <label>Opción 4 <input type="checkbox" value="4" name="opcion4"/> </label>
+            <label>Opción 5 <input type="checkbox" value="5" name="opcion5"/> </label>
+         </fieldset>
+         <br/>
+         <label for="txtRangoEdad">Rango de Edad</label>
+         <select name="txtRangoEdad" id="txtRangoEdad">
+            <option value="*">Seleccionar un Rango</option>
+            <option value="1-10">1-10 Años</option>
+            <option value="11-20">11-20 Años</option>
+            <option value="21-30">21-30 Años</option>
+            <option value="31-40">31-40 Años</option>
+            <option value="41-50">41-50 Años</option>
+            <option value="51-60">51-60 Años</option>
+         </select>
+         <br/>
+         <label for="txtBio">Biografía</label><br/>
+         <textarea id="txtBio" name="txtBio"
+            placeholder="Escribe su biografía completa"
+         ></textarea>
+         <br/>
+         <button name="btnProcesar" type="submit">
+            Procesar
+         </button>
+    </form>
+</body>
+</html>
