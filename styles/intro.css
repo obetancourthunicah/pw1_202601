@@ -44,6 +44,18 @@ header div h1 {
     margin:0px
 }
 
+header nav {
+    display:block;
+    min-height: 0px;
+    max-height: 100vh;
+    overflow:hidden;
+    transition: max-height 0.5s ease-in-out;
+}
+
+header nav.hidden {
+    max-height: 0px;
+}
+
 header nav ul {
     list-style: none;
     margin:0px;
@@ -62,12 +74,76 @@ header nav ul li a {
     color: #eee;
 }
 
+/* Responsive Design */
+/* Mobile Fisrt*/
+@media (min-width:720px) {
+    header {
+        flex-direction: row;
+        justify-content: space-between;
+    }
+    header div .hamburguer-buttons{
+        display: none;
+    }
+    header nav.hidden {
+        max-height: 100vh;
+    }
+    header nav ul {
+        display: flex;
+        align-items: center;
+    }
+    header nav ul li {
+        border-bottom: none;
+        width:auto;
+    }
+}
+
 
 main {
  flex:1;
- 
+}
+
+main .hero {
+    position:relative;
+    width:100%;
+    height: 80vh;
+    min-height: 320px;
+    max-height: 480px;
+    overflow: hidden;
+}
+
+main .hero div {
+     width:100%;
+    height: 80vh;
+    min-height: 320px;
+    max-height: 480px;
+}
+main .hero div img{
+    width:100%;
+    height:100%;
+    object-fit: cover;
+}
+
+main .hero .action-panel{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    background-color:#FFF;
+    max-width:280px;
+    max-height: 280px;
+    transform:translate(-50%, -50%);
+    padding: 1rem;
+    border-radius: 17px;
+    box-shadow: 3px 3px 5px #000;
+}
+
+@media (min-width:720px) {
+    main .hero .action-panel.q2{
+        top: 25%;
+        left: 75%;
+        transform:translate(-50%, -25%);
+    }
 }
 
 footer {
- 
+
 }

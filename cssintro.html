@@ -2,8 +2,20 @@
 <html>
     <head>
         <title>¿Qué es CSS?</title>
+        <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="styles/intro.css" />
+        <script>
+            document.addEventListener("DOMContentLoaded", ()=>{
+                const hb = document.querySelector(".hamburguer-buttons");
+                const nv = document.querySelector("header nav");
+                hb.addEventListener("click", (e)=>{
+                    e.preventDefault();
+                    e.stopPropagation();
+                    nv.classList.toggle("hidden");
+                });
+            });
+        </script>
     </head>
     <body>
         <header>
@@ -15,7 +27,7 @@
                 </div>
                 <h1>Soccer</h1>
             </div>
-            <nav>
+            <nav class="hidden">
                 <ul>
                     <li><a href="#hero">Home</a></li>
                     <li><a href="#pricing">Pricing</a></li>
@@ -25,6 +37,19 @@
             </nav>
         </header>
         <main>
+            <section class="hero">
+                <div>
+                    <picture>
+                        <source srcset="https://picsum.photos/id/80/1300/720" media="(min-width:1025px)" />
+                        <source srcset="https://picsum.photos/id/80/1025/640" media="(min-width:720px)" />
+                        <img src="https://picsum.photos/id/80/480/480" alt="Hero Panel Image" />
+                    </picture>
+                </div>
+                <div class="action-panel q2">
+                    <h2>Agenda una cita para la demo!!!</h2>
+                    <a href>Agendar</a>
+                </div>
+            </section>
             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusantium possimus illo quaerat aliquam qui quam assumenda atque laborum minima magni velit earum aperiam voluptatum modi, facere odio pariatur? Aspernatur, nulla.</p>
         </main>
         <footer>
