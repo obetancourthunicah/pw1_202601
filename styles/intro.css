@@ -156,6 +156,11 @@ main .hero .action-panel{
     }
 }
 
+.fit-image {
+    width:100%;
+    height: 100%;
+    object-fit: cover;
+}
 
 .grid{
     display: flex;
@@ -308,6 +313,81 @@ main .hero .action-panel{
     padding:1rem;
     border: 2px dashed red;
     margin: 1rem;
+}
+
+:root {
+    font-size: 16px;
+}
+/* Entity m
+ <div style="font-size:20px">
+    <div style="font-size:2em">
+        HOLA
+        <div style="font-size:0.5em">
+            ADIOS
+        </div>
+    </div>
+ </div>
+*/
+/* REM. Root entity m
+<div style="font-size:20px">
+    <div style="font-size:2rem">
+        HOLA
+        <div style="font-size:0.5rem">
+            ADIOS
+        </div>
+    </div>
+ </div>
+ */
+.form {
+    /*
+        arriba abajo derecha izquierda
+        top   bottom  right left
+        trouble -> trbl
+        Top Right Bottom Left
+        T R B L
+    */
+    /*
+    unidades relativas: % em
+    unidades absolutad: px cm in m
+                 T    R   B    L*/
+    /*padding: 4rem 3rem 2rem 1rem;*/
+    /*         Y    X */
+    /*padding: 2rem 2.5rem;*/
+
+    /*         ALL*/
+    padding: 1rem;
+    background-color: #315231;
+    border: 3px dotted #000;
+    /* border-bottom: ;
+    border-left:;
+    border-top: ;
+    border-right: ; */
+    margin: 1rem;
+}
+.form fieldset {
+    border: none;
+    padding: 0px;
+    margin-bottom:1rem;
+}
+.form fieldset label {
+    display: inline-block;
+    font-weight: bolder;
+    margin-right:0.5rem;
+    min-width: 128px;
+}
+
+.form fieldset input {
+    border:none;
+    border-bottom: 1px solid #333;
+    background-color: transparent;
+    font-size: 1rem;
+    padding: 0.5rem 0.75rem;
+    outline: none;
+}
+.form fieldset input:focus {
+    background-color: rgba(255,255,255, 0.25);
+    border-top-left-radius: 7px;
+    border-top-right-radius: 7px;
 }
 
 footer {
