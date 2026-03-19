@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Introducción a Javascript</title>
+</head>
+<body>
+    <h1>Intro a Javascript</h1>
+    <button name="btn_inline" onclick="alert('Click Inline');">
+        Click en Javascript Inline
+    </button>
+    <hr>
+    <button id="btn_script_block">Click en Boton desde Script Block</button>
+
+    <script>
+        // Javascript es asyncrono por naturaleza
+        document.addEventListener("DOMContentLoaded", page_load);
+        document.addEventListener("DOMContentLoaded", page_load2);
+
+        function page_load(){
+            // Hacer referencia al nodo y registrar los evento a reaccionar
+            let btn = document.getElementById("btn_script_block");
+            btn.addEventListener("click", (e)=>{
+                e.preventDefault();
+                e.stopPropagation();
+                alert("Click from Block");
+            });
+        }
+        function page_load2(){
+            console.log("Loaded 2 Ejecutado");
+        }
+    </script>
+</body>
+</html>
