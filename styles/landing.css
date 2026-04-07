@@ -7,61 +7,66 @@
 * {
     box-sizing: border-box;
 }
+
 html {
-    height:100%;
+    height: 100%;
 }
+
 body {
     display: flex;
     flex-direction: column;
     min-height: 100%;
-    padding:0px;
-    margin:0px;
+    padding: 0px;
+    margin: 0px;
 }
 
 header {
     background-color: #000;
-    color:white;
+    color: white;
 }
+
 main {
-    flex:1;
+    flex: 1;
 }
+
 footer {
     background-color: #000;
-    color:white;
+    color: white;
 }
 
 
 
 .carousel {
-    position:relative;
+    position: relative;
     width: 100vw;
     height: 60vh;
     overflow: hidden;
 }
 
-.carousel .track{
+.carousel .track {
     display: flex;
     position: absolute;
-    top:0px;
-    width:auto;
-    height:60vh;
-    left:0vw;
+    top: 0px;
+    width: auto;
+    height: 60vh;
+    left: 0vw;
     transition: left 0.7s ease-in-out;
 }
 
 .carousel .track .slide {
-    flex:0;
-    width:100vw;
+    flex: 0;
+    width: 100vw;
     height: 60vh;
     position: relative;
 }
 
 .carousel .track .slide .image {
-    width:100vw;
+    width: 100vw;
     height: 60vh;
 }
-.carousel .track .slide .image img{
-    width:100%;
+
+.carousel .track .slide .image img {
+    width: 100%;
     height: 100%;
     object-fit: cover;
     object-position: center bottom;
@@ -69,12 +74,41 @@ footer {
 
 .carousel .track .slide .action {
     position: absolute;
-    top:50%;
-    left:50%;
-    transform: translate(-50%,-50%);
-    width:280px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 280px;
     height: 200px;
-    padding:1rem;
+    padding: 1rem;
     background-color: white;
     box-shadow: 3px 3px #333;
+}
+
+.carousel .carousel-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    height: 4rem;
+    width: 2rem;
+    background-color: #333;
+    color: #fff;
+    border: none;
+}
+
+.carousel .carousel-btn.btnright {
+    right: 0px;
+}
+
+.carousel .carousel-btn.btnleft {
+    left: 0px;
+}
+
+.error {
+    border-color: red;
+    outline-color: red;
+}
+.error-text {
+    font-weight: bold;
+    color: #760000;
+    font-size: 0.75rem;
 }

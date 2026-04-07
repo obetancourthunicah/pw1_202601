@@ -16,6 +16,8 @@ class Carousel {
         this.direction = 1;
     }
     init() {
+        // Generar Botones
+        this.generateNavigationUI();
         this.tick();
     }
     tick(){
@@ -43,6 +45,31 @@ class Carousel {
     moveTo(newIndex) {
         this.currentIndex = newIndex;
         this.track.style.left = `${-100 * this.currentIndex}vw`;
+    }
+
+    generateNavigationUI() {
+        let btnLeft = document.createElement("BUTTON");
+        let btnRight = document.createElement("BUTTON");
+
+        btnLeft.classList.add("carousel-btn");
+        btnLeft.classList.add("btnleft");
+        btnRight.classList.add("carousel-btn");
+        btnRight.classList.add("btnright");
+
+        btnLeft.textContent = "<";
+        btnRight.textContent = ">";
+
+        btnRight.addEventListener("click", (e)=>{
+            e.preventDefault();
+            e.stopPropagation();
+            // Para mover al siguiente
+            alert("Moviendo A");
+            // Tip: se debe cancelar el timeout y
+            // volver a correr el tick;
+        });
+
+        this.carouselHolder.appendChild(btnLeft);
+        this.carouselHolder.appendChild(btnRight);
     }
 
 

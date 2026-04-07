@@ -1,12 +1,15 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Landing Page Producto XYZ</title>
     <link rel="stylesheet" href="styles/landing.css" />
     <script src="javascript/landing.js"></script>
+    <script src="javascript/validador.js"></script>
 </head>
+
 <body>
     <header>
         <div>
@@ -29,11 +32,12 @@
                     </div>
                     <div class="action">
                         <h2>Slide 1</h2>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Totam ducimus quod distinctio corrupti! Reiciendis, enim cum?</p>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Totam ducimus quod distinctio
+                            corrupti! Reiciendis, enim cum?</p>
                     </div>
                 </div>
                 <div class="slide">
-                     <div class="image">
+                    <div class="image">
                         <picture>
                             <source srcset="https://picsum.photos/id/120/1300/720" media="(min-width:1025px)">
                             <source srcset="https://picsum.photos/id/120/1024/640" media="(min-width:720px)">
@@ -42,11 +46,12 @@
                     </div>
                     <div class="action">
                         <h2>Slide 2</h2>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Totam ducimus quod distinctio corrupti! Reiciendis, enim cum?</p>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Totam ducimus quod distinctio
+                            corrupti! Reiciendis, enim cum?</p>
                     </div>
                 </div>
                 <div class="slide">
-                     <div class="image">
+                    <div class="image">
                         <picture>
                             <source srcset="https://picsum.photos/id/220/1300/720" media="(min-width:1025px)">
                             <source srcset="https://picsum.photos/id/220/1024/640" media="(min-width:720px)">
@@ -55,11 +60,12 @@
                     </div>
                     <div class="action">
                         <h2>Slide 3</h2>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Totam ducimus quod distinctio corrupti! Reiciendis, enim cum?</p>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Totam ducimus quod distinctio
+                            corrupti! Reiciendis, enim cum?</p>
                     </div>
                 </div>
                 <div class="slide">
-                     <div class="image">
+                    <div class="image">
                         <picture>
                             <source srcset="https://picsum.photos/id/10/1300/720" media="(min-width:1025px)">
                             <source srcset="https://picsum.photos/id/10/1024/640" media="(min-width:720px)">
@@ -68,14 +74,38 @@
                     </div>
                     <div class="action">
                         <h2>Slide 4</h2>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Totam ducimus quod distinctio corrupti! Reiciendis, enim cum?</p>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Totam ducimus quod distinctio
+                            corrupti! Reiciendis, enim cum?</p>
                     </div>
                 </div>
             </div>
+        </section>
+        <section>
+            <form action="landingpage.html" method="get" id="contactForm">
+                <fieldset>
+                    <div id="txtNombreDiv">
+                        <label for="txtNombre">Nombre Completo</label>
+                        <input type="text" name="txtNombre" id="txtNombre" placeholder="Nombre Completo" />
+                    </div>
+                    <div id="txtCorreoDiv">
+                        <label for="txtCorreoElectronico">Correo Electrónico</label>
+                        <input type="email" name="txtCorreoElectronico" id="txtCorreoElectronico"
+                            placeholder="Tu Correo Electrónico" />
+                    </div>
+                </fieldset>
+                <fieldset>
+                    <label for="intEdad">Edad</label>
+                    <input type="number" name="intEdad" id="intEdad" placeholder="Edad" />
+                </fieldset>
+                <div>
+                    <button type="submit" name="btnEnviar" id="btnEnviar">Enviar -> </button>
+                </div>
+            </form>
         </section>
     </main>
     <footer>
         Todos los derechos 2026 ICC UNICAH
     </footer>
 </body>
+
 </html>

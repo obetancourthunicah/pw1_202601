@@ -4,6 +4,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Formularios</title>
+    <style>
+      .error {
+         border-color: red;
+         outline-color: red;
+      }
+    </style>
 </head>
 <body>
     <h1>Formulario en HTML</h1>
@@ -11,7 +17,11 @@
         <label for="txtNombre">Nombre Completo</label>
         <input type="text" name="txtNombreCompleto" id="txtNombre" placeholder="Escriba su Nombre Completo" />
         <!-- txtNombreCompleto=valorIngresadoPorElusuario -->
-         <label for="intEdad">Edad</label>
+         <br/>
+        <label for="txtCorreoElectronico">Correo Electrónico</label>
+        <input type="email" name="txtCorreoElectronico" id="txtCorreoElectronico" placeholder="Tu Correo Electrónico" />
+        <br/>
+        <label for="intEdad">Edad</label>
          <input type="number" min="1" max="150" name="intEdad" id="intEdad" />
          
          <br/>
