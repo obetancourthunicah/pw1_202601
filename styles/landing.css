@@ -152,6 +152,28 @@ footer {
     justify-content: start;
     padding:0.5rem;
     min-height: 72px;
+    gap:0.5rem;
 }
 
-
+.plan_asignatura {
+    width: 100px;
+    max-width: 100px;
+    padding: 0.25rem;
+    font-size: 0.6rem;
+    border: 1px solid #333;
+    background-color: #d6d6d6;
+    min-height: 60px;
+    display:flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: center;
+}
+.plan_selected {
+    background-color: #23d123;
+}
+.plan_requisito {
+    background-color: #d09d11;
+}
+.plan_apertura {
+    background-color: #1154d0;
+}

@@ -72,6 +72,41 @@ const planICC = {
                 },
             ]
         },
+        {
+            "bloque": "III",
+            "asignaturas": [
+                {
+                    "codigo": "MT301",
+                    "nombre": "Cálculo",
+                    "creditos": 4,
+                    "requisitos": ["MT201"]
+                },
+                {
+                    "codigo": "MT102",
+                    "nombre": "Estadística I",
+                    "creditos": 4,
+                    "requisitos": ["MT101"]
+                },
+                {
+                    "codigo": "IF214",
+                    "nombre": "Programación Estructurada I",
+                    "creditos": 3,
+                    "requisitos": ["IF200"]
+                },
+                {
+                    "codigo": "IF213",
+                    "nombre": "Estructura Discretas",
+                    "creditos": 3,
+                    "requisitos": ["IF200"]
+                },
+                {
+                    "codigo": "BG205",
+                    "nombre": "Ecología",
+                    "creditos": 3,
+                    "requisitos": []
+                },
+            ]
+        },
     ],
 
 };
@@ -86,6 +121,8 @@ class FlujoGrama {
         this.plan = plan;
         this.root = document.getElementById(rootId);
         this.root.classList.add("plan");
+        this.pseudoDom = {};
+        this.selected = null;
     }
     GenerateUX() {
         this.createHeader();
@@ -113,7 +150,59 @@ class FlujoGrama {
 
             bloque.appendChild(bloqueIndice);
             bloque.appendChild(bloqueAsignaturas);
+            this.createAsignaturas(bloqueAsignaturas, blq);
             this.root.appendChild(bloque);
+        });
+    }
+
+    createAsignaturas(bloqueDOM, blqDef) {
+        blqDef.asignaturas.forEach((asg) => {
+            let asignaturaDOM = document.createElement("DIV");
+            asignaturaDOM.classList.add("plan_asignatura");
+            let codigoDom = document.createElement("DIV");
+            codigoDom.innerText = asg.codigo;
+            let descripcionDom = document.createElement("DIV");
+            descripcionDom.innerText = `${asg.nombre} (${asg.creditos})`;
+            asignaturaDOM.appendChild(codigoDom);
+            asignaturaDOM.appendChild(descripcionDom);
+            bloqueDOM.appendChild(asignaturaDOM);
+            // Agregar
+            this.pseudoDom[asg.codigo] = {};
+            this.pseudoDom[asg.codigo]["nodo"] = asignaturaDOM;
+            this.pseudoDom[asg.codigo]["requisitos"] = [];
+            this.pseudoDom[asg.codigo]["apertura"] = [];
+            asg.requisitos.forEach(rq => {
+                this.pseudoDom[asg.codigo]["requisitos"].push(
+                    this.pseudoDom[rq].nodo
+                );
+                this.pseudoDom[rq].apertura.push(
+                    this.pseudoDom[asg.codigo].nodo
+                );
+            });
+            this.pseudoDom[asg.codigo]["nodo"].addEventListener(
+                "click",
+                (e) => {
+                    e.preventDefault();
+                    e.stopPropagation();
+                    if (this.selected) {
+                        this.selected.nodo.classList.remove("plan_selected");
+                        this.selected.requisitos.forEach(
+                            n => n.classList.remove("plan_requisito")
+                        );
+                        this.selected.apertura.forEach(
+                            n => n.classList.remove("plan_apertura")
+                        );
+                    }
+                    this.selected = this.pseudoDom[asg.codigo];
+                    this.selected.nodo.classList.add("plan_selected");
+                    this.selected.requisitos.forEach(
+                        n => n.classList.add("plan_requisito")
+                    );
+                    this.selected.apertura.forEach(
+                        n => n.classList.add("plan_apertura")
+                    );
+                }
+            );
         });
     }
 }
